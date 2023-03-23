@@ -74,25 +74,7 @@ function Tabs() {
          <section id="menu" className="bg-light mb-5">
         <div className="container">
             <div className="row">
-                <div className="col-12 intro-text">
-                    <h1>Explora nuestras recetas</h1>
-                    <p>Tenemos una gran variedad de recetas que te van a encantar. Además, podrás ver qué supermercados se encuentran cerca de ti para que puedas comprar los ingredientes.</p>
-                    <div className="h-search-form mt-4">
-                        
-                        <form action="#">
-                            <input 
-                            onChange={(e)=> setInput(e.target.value)}
-                            type="search"
-                            value = {input} 
-                            name="search" 
-                            placeholder="Busca un platillo"/>
-                            <button className="btn btn-brand">Buscar</button>
-                        </form>
-                   
-                        <h1>{input}</h1>
-                        
-                    </div>
-                </div>
+                
             </div>
         </div>
 
