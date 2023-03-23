@@ -4,11 +4,11 @@ import Axios from "axios";
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-import Tabs from './components/tabs';
+
 import Header from './components/Header';
 import Mapa from "./components/Map";
 import Buscar from "./components/Buscar"
-
+import Menu from "./components/Menu";
 
 
 
@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <Header />
       <Buscar />
-      <Tabs />
+      <Menu />
       <div>
         <Mapa />
       <GoogleMaps

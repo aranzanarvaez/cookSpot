@@ -64,6 +64,7 @@ function Buscar() {
         {recipes.map((recipe) => (
 
           <div className="menu-item bg-white shadow-on-hover" key={recipe.id}>
+            
             <img src={recipe.image} alt={recipe.title} />
             <div class="menu-item-content p-4">
             <h2>{recipe.title}</h2>
