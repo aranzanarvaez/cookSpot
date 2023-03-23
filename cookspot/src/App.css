@@ -111,6 +111,12 @@ section{
 #receta{
     background: linear-gradient(#00000098, #00000098);
 }
+
+/* Mapa */
+#map {
+	height: 500px;
+	width: 100%;
+}
 .App {
   text-align: center;
 }

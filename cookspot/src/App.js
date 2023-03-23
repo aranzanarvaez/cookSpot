@@ -1,14 +1,15 @@
-
+import GoogleMaps from "simple-react-google-maps"
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Receta from "./components/Receta"
+
 import Tabs from './components/tabs';
 import Header from './components/Header';
-import Recetas from "./components/Recetas";
-import Recipe from "./components/Recipe";
-import { NavLink } from "react-router-dom";
+import Mapa from "./components/Map";
+
+
+
 
 
 
@@ -29,8 +30,27 @@ function App() {
     
     <div className="App">
       <Header />
-
+    
       <Tabs />
+      <div>
+        <Mapa />
+      <GoogleMaps
+        apiKey={"AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik"}
+        style={{height: "400px", width: "100%"}}
+        zoom={15}
+        center={{lat:19.28433061394175,
+          lng: -99.1360138043187}}
+          markers={[
+            {lat:19.284373283355894 ,lng: -99.13855739113598}, 
+            {lat:19.28577078662088 ,lng: -99.13788148578917},
+            {lat:19.28966973885299 ,lng: -99.13075930492715}, 
+            {lat:19.285791243556794 ,lng: -99.13088702246479}, 
+            {lat:19.290201338070663 ,lng: -99.13614734811247},
+        ]}
+      />
+      
+      </div>
+      
      
     </div>
   );

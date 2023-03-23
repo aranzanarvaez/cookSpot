@@ -13,7 +13,7 @@ function Header() {
                     <div className="col-lg-8">
                         <h6 className="fw-bold text-white">BIENVENIDO A COOKSPOT</h6>
                         <h2 className="display-1 fw-bold text-white">Prepara tus platillos favoritos</h2>
-                        <a href="#menu" class="btn btn-brand">Busca ahora</a>
+                        <a href="#menu" className="btn btn-brand">Busca ahora</a>
                         
                     </div>
                 </div>
@@ -26,7 +26,7 @@ function Header() {
                     <div className="col-lg-8">
                         <h6 className="fw-bold text-white">BIENVENIDO A COOKSPOT</h6>
                         <h2 className="display-1 fw-bold text-white">Compra los ingredientes en tu super más cercano</h2>
-                        <a href="#menu" class="btn btn-brand">Ve las ubicaciones</a>
+                        <a href="#menu" className="btn btn-brand">Ve las ubicaciones</a>
                     </div>
                 </div>
             </div>

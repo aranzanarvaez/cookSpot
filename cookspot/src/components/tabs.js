@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 
+
 //import {MdOutlineIcecream} from 'react-icons/md'
 
 function Tabs() {
@@ -9,6 +10,18 @@ function Tabs() {
     const[meal, setMeal ]= useState([]);
     const[breakFast, setBreakFast] = useState([]);
     const[dinner, setDinner] = useState([]);
+    const idMeal = 0;
+    const [id,setID] = useState("");
+    const [input,setInput] = useState("");
+
+    const [recetas,setReceta] = useState([]);
+
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+    };
+
+
     useEffect (() =>{
         getBreakfast();
         
@@ -25,7 +38,7 @@ function Tabs() {
         getDinner();
         
       },[]);
-
+     
     const getRandom = async () =>{
         const api1 = await fetch('https://api.spoonacular.com/recipes/complexSearch?apiKey=e0bdc9565d104e2ea5a80893da61d2be&type=snack')
         const data1 = await api1.json();
@@ -52,6 +65,9 @@ function Tabs() {
         console.log(data4);
         setDinner(data4.results)
     };
+
+
+    
     return (
         
       <div>
@@ -62,10 +78,19 @@ function Tabs() {
                     <h1>Explora nuestras recetas</h1>
                     <p>Tenemos una gran variedad de recetas que te van a encantar. Además, podrás ver qué supermercados se encuentran cerca de ti para que puedas comprar los ingredientes.</p>
                     <div className="h-search-form mt-4">
+                        
                         <form action="#">
-                            <input type="search" name="search" placeholder="Busca un platillo"/>
+                            <input 
+                            onChange={(e)=> setInput(e.target.value)}
+                            type="search"
+                            value = {input} 
+                            name="search" 
+                            placeholder="Busca un platillo"/>
                             <button className="btn btn-brand">Buscar</button>
                         </form>
+                   
+                        <h1>{input}</h1>
+                        
                     </div>
                 </div>
             </div>
@@ -99,11 +124,15 @@ function Tabs() {
                     {foodF && foodF.map((recipe1) => {
                         return(
                         <div key = {recipe1.id}> 
+
                             <img src={recipe1.image} className="img-fluid"></img>
                             <div className="menu-item-content p-4">
-                                <h5 className="mt-1 mb-2">{recipe1.title}</h5>
                                 
-                         </div>
+                                <h5 className="mt-1 mb-2"> {recipe1.title}</h5>
+                                
+                                
+                                
+                            </div>
                             
                             </div>
                         );
@@ -121,7 +150,8 @@ function Tabs() {
                         <div key = {recipe.id}> 
                             <img src={recipe.image} className="img-fluid"></img>
                             <div className="menu-item-content p-4">
-                                <h5 className="mt-1 mb-2">{recipe.title}</h5>
+                                <h5 className="mt-1 mb-2"><a href="recipe.html"> {recipe.title}</a></h5>
+
                                 
                          </div>
                             
@@ -141,7 +171,7 @@ function Tabs() {
                         <div key = {recipe2.id}> 
                             <img src={recipe2.image} className="img-fluid"></img>
                             <div className="menu-item-content p-4">
-                                <h5 className="mt-1 mb-2">{recipe2.title}</h5>
+                                <h5 className="mt-1 mb-2"><a href="recipe.html"> {recipe2.title}</a></h5>
                                 
                          </div>
                             
@@ -161,7 +191,7 @@ function Tabs() {
                         <div key = {recipe4.id}> 
                             <img src={recipe4.image} className="img-fluid"></img>
                             <div className="menu-item-content p-4">
-                                <h5 className="mt-1 mb-2">{recipe4.title}</h5>
+                                <h5 className="mt-1 mb-2"><a href="recipe.html"> {recipe4.title}</a></h5>
                                 
                          </div>
                             
