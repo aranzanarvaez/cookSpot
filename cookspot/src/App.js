@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Mapa from "./components/Map";
 import Buscar from "./components/Buscar"
 import Menu from "./components/Menu";
+import Opciones from "./components/Opciones";
 
 
 
@@ -31,7 +32,8 @@ function App() {
     <div className="App">
       <Header />
       <Buscar />
-      <Menu />
+      <Opciones />
+ 
       <div>
         <Mapa />
       <GoogleMaps
